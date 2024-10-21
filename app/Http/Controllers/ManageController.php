@@ -86,7 +86,9 @@ class ManageController extends Controller
      */
     public function edit(Manage $manage)
     {
-        //
+        return inertia('Manage/Edit', ['manage' => new ManageResource($manage), ]
+
+    );
     }
 
     /**
@@ -94,7 +96,12 @@ class ManageController extends Controller
      */
     public function update(UpdateManageRequest $request, Manage $manage)
     {
-        //
+        $data = $request->validated();
+        $data ['created_by'] = Auth::id();
+        $data ['updated_by'] = Auth::id();
+        $manage ->update($data);
+
+        return to_route('manage.index')->with('success', "The Intention was Updated");
     }
 
     /**
@@ -102,6 +109,7 @@ class ManageController extends Controller
      */
     public function destroy(Manage $manage)
     {
+       dd($manage);
         $manage->delete();
         return to_route('manage.index') ->with('success', 'Intention was Deleted');
     }
