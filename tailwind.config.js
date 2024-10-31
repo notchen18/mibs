@@ -20,14 +20,15 @@ export default {
                 bgColor: '#392504',
                 bgLight: '#FFE6BE',
                 bgMedium: '#FFC261', 
-                bgDark: '#B3802F',   
+                bgDark: '#B3802F',  
+                bgDarker: '#000000', 
                 buttonYellow: '#F1BC1F',
                 buttonBlue: '#1662A9',
                 buttonGreen: '#16A927',   
                 statsColor1: '#5EFF79', 
                 notif: '#5EFF79',  
                 statsColor2: '#0FC8EC',  
-                statsFont: '#FFB45E',
+                statsColor3: '#FFB45E',
                 textColor: '#361f08',  
             }
 

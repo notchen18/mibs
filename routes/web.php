@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ManageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -11,7 +12,7 @@ use Inertia\Inertia;
 Route::redirect('/', 'dashboard');
 
 Route::middleware(['auth', 'verified'])->group(function() {
-    Route::get('/dashboard', fn() => Inertia::render('Dashboard'))->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
     Route::get('/view', [ViewController::class, 'index'])->name('view.index');
     Route::resource('manage', ManageController::class);
     Route::resource('user', UserController::class);
