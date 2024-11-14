@@ -13,12 +13,12 @@ export default function Authenticated({ header, children }) {
     return (
         <div className="min-h-screen bg-bgColor">
             <nav className="bg-bgLight border-b border-bgColor">
-                <div style={{ marginLeft: '30px' }}>
+                <div className="px-[1.875rem]">
                     <div className="flex justify-between h-16">
                         <div className="flex justify-start h-16">
                             <div className="shrink-0 flex items-center">
                                 <Link href="/">
-                                <img src="/img/logo.png" alt="Logo" className="block h-14 w-auto" />
+                                    <img src="/img/logo.png" alt="Logo" className="block h-14 w-auto" />
                                 </Link>
                             </div>
 
@@ -32,7 +32,7 @@ export default function Authenticated({ header, children }) {
                                 </NavLink>
 
                                 <NavLink style={{ color: '#361f08' }} href={route('manage.index')} active={route().current('manage.index')}>
-                                    Manage Intentions 
+                                    Manage Intentions
                                 </NavLink>
 
                                 <NavLink style={{ color: '#361f08' }} href={route('user.index')} active={route().current('user.index')}>
